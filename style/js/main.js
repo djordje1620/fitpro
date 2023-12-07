@@ -60,26 +60,13 @@ function generateNavItem(item) {
     // Proveri da li je trenutna putanja jednaka aktivnom linku
     var activClass = currentPath === activLink ? "active" : "";
 
-    // Proveri trenutnu putanju u odnosu na "/fitpro/" ili "/fitpro/index.html"
-    if (currentPath == "/fitpro/" || currentPath == "/fitpro/index.html") {
-        // Ako je aktivni link "/fitpro/index.html"
-        if (activLink == "/fitpro/index.html") {
-            // Generiši HTML za navigacioni link sa odgovarajućom klasom
-            ispis = `<a href="/fitpro/${item.link}" class="nav-item nav-link ${activClass}">${item.text}</a>`;
-        } else {
-            // Generiši HTML za navigacioni link sa odgovarajućom klasom
-            ispis = `<a href="/fitpro/pages/${item.link}" class="nav-item nav-link ${activClass}">${item.text}</a>`;
-        }
+    // Ako je aktivni link "/fitpro/index.html"
+    if (activLink == "/fitpro/index.html") {
+        // Generiši HTML za navigacioni link sa odgovarajućom klasom
+        ispis = `<a href="/fitpro/${item.link}" class="nav-item nav-link ${activClass}">${item.text}</a>`;
     } else {
-        // Ako je aktivni link "/fitpro/index.html"
-        if (activLink == "/fitpro/index.html") {
-            // Generiši HTML za navigacioni link sa odgovarajućom klasom
-            ispis = `<a href="../../${item.link}" class="nav-item nav-link ${activClass}">${item.text}</a>`;
-            console.log(activClass);
-        } else {
-            // Generiši HTML za navigacioni link sa odgovarajućom klasom
-            ispis = `<a href="/fitpro/pages/${item.link}" class="nav-item nav-link ${activClass}">${item.text}</a>`;
-        }
+        // Generiši HTML za navigacioni link sa odgovarajućom klasom
+        ispis = `<a href="/fitpro/pages/${item.link}" class="nav-item nav-link ${activClass}">${item.text}</a>`;
     }
 
     // Vrati generisani HTML
