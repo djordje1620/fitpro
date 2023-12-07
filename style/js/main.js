@@ -54,8 +54,12 @@ function generateNavItem(item) {
     if (currentPath == "/fitpro/index.html" || currentPath == "/fitpro/") {
         activLink = "/fitpro/" + item.link;
     } else if(currentPath.includes("/fitpro/pages/")) {
-        // Ako smo unutar "pages" foldera, pravimo putanju bez "pages"
-        activLink = "/fitpro/pages/" + item.link;
+        if(item.link == "index.html"){
+            activLink = "/fitpro/" + item.link;
+        }
+        else{
+            activLink = "/fitpro/pages/" + item.link;
+        }
     } 
 
     // Proveri da li je trenutna putanja jednaka aktivnom linku
