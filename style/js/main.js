@@ -271,7 +271,7 @@ ispis = "";
 
 for (var i = 0; i < benefitsData.length; i++) {
     var path = "";
-    if(currentPath === "/fitpro/index.html" || currentPath === "/fitpro/"){
+    if(currentPath == "/fitpro/index.html" || currentPath == "/fitpro/"){
         path = "/style/img/";
     }else{
         path = "../style/img/";
