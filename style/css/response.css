@@ -1,0 +1,11 @@
+@media only screen and (max-width: 767px) {
+    .msg {
+        width: 90%; 
+        padding: 20px; 
+    }
+
+    .btnClose {
+        float: none;
+        margin-top: 10px; 
+    }
+}
