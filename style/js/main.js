@@ -60,15 +60,24 @@ function generateNavItem(item) {
     // Proveri da li je trenutna putanja jednaka aktivnom linku
     var activClass = currentPath === activLink ? "active" : "";
 
-    // Ako je aktivni link "/fitpro/index.html"
-    if (activLink == "/fitpro/index.html") {
-        // Generiši HTML za navigacioni link sa odgovarajućom klasom
-        ispis = `<a href="/fitpro/${item.link}" class="nav-item nav-link ${activClass}">${item.text}</a>`;
-    } else {
-        // Generiši HTML za navigacioni link sa odgovarajućom klasom
-        ispis = `<a href="/fitpro/pages/${item.link}" class="nav-item nav-link ${activClass}">${item.text}</a>`;
+    if (currentPath == "/fitpro/index.html" || currentPath == "/fitpro/") {
+        // Ako je aktivni link "/fitpro/index.html"
+        if (activLink == "/fitpro/index.html") {
+            // Generiši HTML za navigacioni link sa odgovarajućom klasom
+            ispis = `<a href="/fitpro/${item.link}" class="nav-item nav-link ${activClass}">${item.text}</a>`;
+        } else {
+            // Generiši HTML za navigacioni link sa odgovarajućom klasom
+            ispis = `<a href="/fitpro/pages/${item.link}" class="nav-item nav-link ${activClass}">${item.text}</a>`;
+        }
+    }else{
+        if (activLink == "/fitpro/index.html") {
+            // Generiši HTML za navigacioni link sa odgovarajućom klasom
+            ispis = `<a href="../${item.link}" class="nav-item nav-link ${activClass}">${item.text}</a>`;
+        } else {
+            // Generiši HTML za navigacioni link sa odgovarajućom klasom
+            ispis = `<a href="/fitpro/pages/${item.link}" class="nav-item nav-link ${activClass}">${item.text}</a>`;
+        }
     }
-
     // Vrati generisani HTML
     return ispis;
 }
