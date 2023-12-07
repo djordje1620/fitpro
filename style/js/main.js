@@ -59,7 +59,7 @@ function generateNavItem(item) {
     
     var activClass = currentPath === activLink ? "active" : "";
     ispis = `<a href="${activLink}" class="nav-item nav-link ${activClass}">${item.text}</a>`;
-    
+
     return ispis;
 }
 
@@ -128,8 +128,6 @@ function JoinUs() {
 if(currentPath == "/fitpro/index.html" || currentPath == "/fitpro/pages/class.html"){
         addEvent();
 }
-
-
 
 
 var text = [
