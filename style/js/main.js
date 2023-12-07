@@ -38,7 +38,7 @@ var currentPath = window.location.pathname;
 
 //nav item
 const navItems = [
-    { text: 'Home', link: '/index.html' },
+    { text: 'Home', link: 'index.html' },
     { text: 'About Us', link: 'about.html' },
     { text: 'Our Features', link: 'feature.html' },
     { text: 'Classes', link: 'class.html' },
@@ -61,15 +61,15 @@ function generateNavItem(item) {
         var activClass= "active";
     }
     if(currentPath == "/fitpro/" || currentPath == "/fitpro/index.html"){
-        if(activLink == "/index.html"){
+        if(activLink == "/fitpro/index.html"){
             ispis = `<a href="/fitpro/${item.link}" class="nav-item nav-link ${activClass}">${item.text}</a>`;
         }else{
             ispis =`<a href="/fitpro/pages/${item.link}" class="nav-item nav-link ${activClass}">${item.text}</a>`;
         }
     }
     else{
-        if(activLink == "/index.html"){
-            ispis = `<a href="..${item.link}" class="nav-item nav-link ${activClass}">${item.text}</a>`; 
+        if(activLink == "/fitpro/index.html"){
+            ispis = `<a href="../../${item.link}" class="nav-item nav-link ${activClass}">${item.text}</a>`; 
             console.log(activClass);   
         }else{
             ispis = `<a href="/fitpro/${item.link}" class="nav-item nav-link ${activClass}">${item.text}</a>`;
@@ -135,10 +135,10 @@ function addEvent(){
 }
 function JoinUs() {
     if(currentPath == "/fitpro/index.html" || currentPath == "/fitpro/"){
-        window.location.href = '/pages/contact.html';
+        window.location.href = '/fitpro/pages/contact.html';
     }
     else{
-        window.location.href = '../pages/contact.html';
+        window.location.href = 'contact.html';
     }
 }
 if(currentPath == "/fitpro/index.html" || currentPath == "/fitpro/pages/class.html"){
