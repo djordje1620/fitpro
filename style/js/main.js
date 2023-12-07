@@ -53,6 +53,9 @@ function generateNavItem(item) {
     // Proveri da li je trenutna putanja "/fitpro/index.html" ili "/fitpro/"
     if (currentPath == "/fitpro/index.html" || currentPath == "/fitpro/") {
         activLink = "/fitpro/" + item.link;
+    } else if (currentPath.includes("/fitpro/pages/")) {
+        // Ako smo unutar "pages" foldera, pravimo putanju bez "pages"
+        activLink = "/" + item.link;
     } else {
         activLink = "/fitpro/pages/" + item.link;
     }
@@ -60,27 +63,13 @@ function generateNavItem(item) {
     // Proveri da li je trenutna putanja jednaka aktivnom linku
     var activClass = currentPath === activLink ? "active" : "";
 
-    if (currentPath == "/fitpro/index.html" || currentPath == "/fitpro/") {
-        // Ako je aktivni link "/fitpro/index.html"
-        if (activLink == "/fitpro/index.html") {
-            // Generiši HTML za navigacioni link sa odgovarajućom klasom
-            ispis = `<a href="/fitpro/${item.link}" class="nav-item nav-link ${activClass}">${item.text}</a>`;
-        } else {
-            // Generiši HTML za navigacioni link sa odgovarajućom klasom
-            ispis = `<a href="/fitpro/pages/${item.link}" class="nav-item nav-link ${activClass}">${item.text}</a>`;
-        }
-    }else{
-        if (activLink == "/fitpro/index.html") {
-            // Generiši HTML za navigacioni link sa odgovarajućom klasom
-            ispis = `<a href="../${item.link}" class="nav-item nav-link ${activClass}">${item.text}</a>`;
-        } else {
-            // Generiši HTML za navigacioni link sa odgovarajućom klasom
-            ispis = `<a href="/fitpro/pages/${item.link}" class="nav-item nav-link ${activClass}">${item.text}</a>`;
-        }
-    }
+    // Generiši HTML za navigacioni link sa odgovarajućom klasom
+    ispis = `<a href="${activLink}" class="nav-item nav-link ${activClass}">${item.text}</a>`;
+
     // Vrati generisani HTML
     return ispis;
 }
+
 const dynamicNavbar = document.getElementById('navItem');
 dynamicNavbar.innerHTML = navItems.map(generateNavItem).join('');
 
