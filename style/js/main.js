@@ -72,7 +72,7 @@ function generateNavItem(item) {
             ispis = `<a href="../../${item.link}" class="nav-item nav-link ${activClass}">${item.text}</a>`; 
             console.log(activClass);   
         }else{
-            ispis = `<a href="/fitpro/${item.link}" class="nav-item nav-link ${activClass}">${item.text}</a>`;
+            ispis = `<a href="/fitpro/pages/${item.link}" class="nav-item nav-link ${activClass}">${item.text}</a>`;
         }
         
     }
