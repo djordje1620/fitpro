@@ -64,7 +64,7 @@ function generateNavItem(item) {
         if(activLink == "/fitpro/index.html"){
             ispis = `<a href="/fitpro/${item.link}" class="nav-item nav-link ${activClass}">${item.text}</a>`;
         }else{
-            ispis =`<a href="/fitpro/pages/${item.link}" class="nav-item nav-link ${activClass}">${item.text}</a>`;
+            ispis =`<a href="/fitpro/${item.link}" class="nav-item nav-link ${activClass}">${item.text}</a>`;
         }
     }
     else{
