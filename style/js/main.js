@@ -272,7 +272,7 @@ ispis = "";
 for (var i = 0; i < benefitsData.length; i++) {
     var path = "";
     if(currentPath == "/fitpro/index.html"){
-        path = "/style/img/";
+        path = "style/img/";
     }
     else if(currentPath == "/fitpro/"){
         path = "style/img/";
