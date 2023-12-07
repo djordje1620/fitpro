@@ -52,7 +52,7 @@ function generateNavItem(item) {
 
     // Proveri da li je trenutna putanja "/fitpro/index.html" ili "/fitpro/"
     if (currentPath == "/fitpro/index.html" || currentPath == "/fitpro/") {
-        activLink = "/fitpro/" + item.link;
+        activLink = "/fitpro/pages/" + item.link;
     } else if(currentPath.includes("/fitpro/pages/")) {
         if(item.link == "index.html"){
             activLink = "/fitpro/" + item.link;
