@@ -44,7 +44,8 @@ const navItems = [
     { text: 'Classes', link: 'class.html' },
     { text: 'Blog', link: 'blog.html' },
     { text: 'Contact', link: 'contact.html' },
-    { text: 'O autoru', link: 'oAutoru.html' }
+    { text: 'O autoru', link: 'oAutoru.html' },
+    { text: 'Dokumentacija', link: 'dokumentacija.pdf' }
 ];
 function generateNavItem(item) {
     var ispis = "";
@@ -620,10 +621,8 @@ function displayBlogPosts(page) {
 }
 
 if(currentPath == "/fitpro/pages/blog.html"){
-    // Inicijalni prikaz blogova na prvoj stranici
     displayBlogPosts(1);
 
-    // Dodajte event listenera za promjenu stranice klikom na pagination
     document.getElementById('pagination').addEventListener('click', function (event) {
     event.preventDefault();
     if (event.target.tagName === 'A') {
@@ -632,7 +631,6 @@ if(currentPath == "/fitpro/pages/blog.html"){
     }
     });
 
-    // Dodajte event listener za "Read More" dugme koje će prikazati modal
     blogContainer.addEventListener('click', function (event) {
         event.preventDefault();
         if (event.target.tagName === 'A' && event.target.classList.contains('btn-outline-primary')) {
