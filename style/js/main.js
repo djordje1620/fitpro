@@ -50,8 +50,8 @@ const navItems = [
 function generateNavItem(item) {
     var ispis = "";
     var activLink;
-    if(currentPath == "/fitpro/index.html"){
-        activLink = item.link;
+    if(currentPath == "/fitpro/index.html" || currentPath == "/fitpro/"){
+        activLink = "/fitpro/" + item.link;
     }else{
         activLink = "/fitpro/pages/" + item.link;
     }
@@ -64,7 +64,7 @@ function generateNavItem(item) {
         if(activLink == "/fitpro/index.html"){
             ispis = `<a href="/fitpro/${item.link}" class="nav-item nav-link ${activClass}">${item.text}</a>`;
         }else{
-            ispis =`<a href="/fitpro/${item.link}" class="nav-item nav-link ${activClass}">${item.text}</a>`;
+            ispis =`<a href="/fitpro/pages${item.link}" class="nav-item nav-link ${activClass}">${item.text}</a>`;
         }
     }
     else{
@@ -72,7 +72,7 @@ function generateNavItem(item) {
             ispis = `<a href="../../${item.link}" class="nav-item nav-link ${activClass}">${item.text}</a>`; 
             console.log(activClass);   
         }else{
-            ispis = `<a href="/fitpro/${item.link}" class="nav-item nav-link ${activClass}">${item.text}</a>`;
+            ispis = `<a href="/fitpro/pages${item.link}" class="nav-item nav-link ${activClass}">${item.text}</a>`;
         }
         
     }
