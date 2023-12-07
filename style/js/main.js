@@ -270,7 +270,7 @@ var benefitsData = [
 ispis = "";
 
 for (var i = 0; i < benefitsData.length; i++) {
-    var path = currentPath === "/fitpro/index.html" ? "style/img/" : "../style/img/";
+    var path = currentPath === "/fitpro/index.html" ? "/style/img/" : "../style/img/";
     var benefit = benefitsData[i];
 
     ispis+=
