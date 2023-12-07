@@ -50,25 +50,16 @@ function generateNavItem(item) {
     var ispis = "";
     var activLink;
 
-    // Proveri da li je trenutna putanja "/fitpro/index.html" ili "/fitpro/"
-    if (currentPath == "/fitpro/index.html" || currentPath == "/fitpro/") {
+    if(item.link == "index.html"){
+        activLink = "/fitpro/" + item.link;
+    }
+    else{
         activLink = "/fitpro/pages/" + item.link;
-    } else if(currentPath.includes("/fitpro/pages/")) {
-        if(item.link == "index.html"){
-            activLink = "/fitpro/" + item.link;
-        }
-        else{
-            activLink = "/fitpro/pages/" + item.link;
-        }
-    } 
-
-    // Proveri da li je trenutna putanja jednaka aktivnom linku
+    }
+    
     var activClass = currentPath === activLink ? "active" : "";
-
-    // Generiši HTML za navigacioni link sa odgovarajućom klasom
     ispis = `<a href="${activLink}" class="nav-item nav-link ${activClass}">${item.text}</a>`;
-
-    // Vrati generisani HTML
+    
     return ispis;
 }
 
